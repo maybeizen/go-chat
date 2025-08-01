@@ -33,6 +33,17 @@ func RunClient() {
 	scanner.Scan()
 	username := scanner.Text()
 
+	go func() {
+		for {
+			_, msg, err := conn.ReadMessage()
+			if err != nil {
+				log.Println("Read error:", err)
+				return
+			}
+			fmt.Print("\r" + string(msg) + "\n> ")
+		}
+	}()
+
 	fmt.Println("Send a message >")
 	for scanner.Scan() {
 		text := scanner.Text()
