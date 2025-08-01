@@ -46,7 +46,7 @@ func handleMessages() {
 	}
 }
 
-func main() {
+func RunServer() {
 	http.HandleFunc("/ws", handleConnections)
 
 	go handleMessages()
