@@ -1,6 +1,17 @@
+# Go Websocket Chat
+
 Simple websocket chat app in GoLang
 
-To run:
+## Run Client:
 
-`go run server/server.go`
-`go run client/client.go`
+`go run . client`
+
+Enter a name (can be anything), and then type your message. The message will appear in all active clients.
+
+Type `/exit` to exit the chat.
+
+## Run Server:
+
+`go run . server`
+
+Runs automatically at `localhost:8080`
